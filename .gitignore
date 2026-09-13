@@ -1,0 +1,11 @@
+build/
+out/
+golden/
+models/
+third_party/
+.vs/
+.mimosa/
+*.obj
+*.pdb
+*.ilk
+*.log
