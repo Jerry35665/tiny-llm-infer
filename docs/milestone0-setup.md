@@ -85,18 +85,12 @@ build.bat
 2. 哪些权重形状你有预感会踩坑（转置？行/列主序？）
 然后告诉我"M0 完成"，我把 M1 文档要点过一遍，你开始写代码。
 
-## 0.6 GitHub 推送（一次性设置，已完成安装，差登录）
+## 0.6 GitHub 推送（已配置完成 ✅）
 
-gh CLI 已装好（`C:\Program Files\GitHub CLI\gh.exe`）。你只需做一次登录，
-在自己开的终端（PowerShell）里运行：
+远端：`git@github.com:Jerry35665/tiny-llm-infer.git`（SSH 方式，已实测推送成功）。
+本机 `~/.ssh/id_rsa` 已注册到 GitHub 账号，push 不需要再输密码。
 
-```powershell
-gh auth login
-# 交互选择: GitHub.com -> HTTPS -> Login with a web browser
-# 复制屏幕上的 8 位设备码，浏览器里粘贴授权
-```
-
-登录完成后告诉 ZCode，之后的工作流：
-- ZCode 帮你建远端仓库 `tiny-llm-infer` 并完成首次推送（建公开仓库，简历项目要可见；
-  想先私密就说一声）
-- 以后每完成一步：更新 README 进度勾选 → `sync.bat "commit message"` 一键提交推送
+日常流程（每完成一步）：
+1. 更新 README 进度勾选（和 docs/benchmarks.md、docs/notes.md 如果相关）
+2. `sync.bat "commit message"` —— 自动 add + commit + push
+（gh CLI 已装但未登录；SSH 通道已够用，gh 只是备用）
