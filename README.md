@@ -39,8 +39,8 @@ docs/          里程碑指导文档（按顺序读）
 
 ## 进度
 
-- [ ] M0 环境与仓库（docs/milestone0-setup.md）
-- [ ] M1 FP32 前向跑通（docs/milestone1-forward.md）
+- [x] M0 环境与仓库（docs/milestone0-setup.md）
+- [ ] M1 FP32 前向跑通（docs/milestone1-forward.md，通俗版导学见 docs/milestone1-walkthrough.md）
 - [ ] M2 KV Cache + 聊天
 - [ ] M3 性能优化 I（FP16 / 融合 / GEMM）
 - [ ] M4 批处理 + CUDA Graph

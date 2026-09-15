@@ -50,6 +50,9 @@ TTFT/TPOT/吞吐的系统指标。你将学到：vLLM 论文里的核心思想�
 2. 卡住了或写完一块 → 在 ZCode 里让我 review / debug（直接说"看看我的 attention kernel"）
 3. 通过验收 → 我帮你把成果提炼成简历 bullets，然后写下一份里程碑指导文档
 4. 每次性能优化后更新 docs/benchmarks.md，Nsight 结论记进 docs/notes.md
+5. **每完成一步就同步 GitHub**：更新 README 进度勾选框（和 benchmarks），
+   然后跑 `sync.bat "commit message"`（自动 add + commit + push）。
+   一次性前提：装好 gh 并登录（docs/milestone0-setup.md 第 0.6 节）。
 
 ## 简历 bullets 模板（做完往里填数）
 
