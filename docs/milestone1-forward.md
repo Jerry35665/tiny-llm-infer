@@ -10,6 +10,7 @@
 **验收**：
 - [ ] `tli_test models/qwen2.5-0.5b golden out` 两条 prompt 逐层 max|Δ| < 1e-3
 - [ ] logits 的 top1/top5 与 HuggingFace 金标准一致
+- [ ] `python scripts/export_vectors.py --golden golden --out vectors --fixed` 产出 vectors/ 测试向量（IC 提案 P6 交付）
 - [ ] 记录第一版端到端耗时（是"朴素但正确"的基线，M3 来打败它）
 - [ ] 全过程有小步 commit
 
@@ -126,7 +127,7 @@ p = softmax(s over j<=i)
 out[i,h,:] = Σ_j p_j * v[j,g,:]
 ```
 建议 grid=(seq, 14)，block 128 线程；分数存 shared memory，两遍 softmax（先求 max 再求 exp 和）。
-M1 不要求在线 softmax（FlashAttention 是 M3/M5 的故事）。
+M1 不要求在线 softmax（FlashAttention 是 M3 的故事）。
 
 ### 4.6 o_proj + 残差
 `x = x + attn_out @ Wo^T`。注意 o_proj 的输入是 14 个 head 拼起来的 [seq, 896]
@@ -173,6 +174,9 @@ python scripts/golden_test.py --model models/qwen2.5-0.5b --out golden
 
 # 逐层对比，输出每层 max|delta| 和第一处超差位置
 python scripts/compare_golden.py --golden golden --mine out
+
+# 通过后：导出 RTL 风格测试向量（IC 提案 P6）
+python scripts/export_vectors.py --golden golden --out vectors --fixed
 ```
 
 **层的下标约定**（两边必须一致，已在 golden_test.py 里对齐）：

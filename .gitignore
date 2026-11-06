@@ -1,6 +1,7 @@
 build/
 out/
 golden/
+vectors/
 models/
 third_party/
 .vs/

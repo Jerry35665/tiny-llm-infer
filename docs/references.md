@@ -23,9 +23,19 @@
 - CUDA C++ Programming Guide：内存层级、shared memory bank conflict、warp 原语
 - Nsight Systems / Nsight Compute 官方文档的 Getting Started
 
-## M4 批处理
+## M4 图执行器（P3）
+- llama.cpp 的 ggml compute graph（ggml.c 的 ggml_build_forward_expand / ggml_graph_compute）
+  —— "硬编码循环 vs 计算图"的工业界答案
+- 拓扑排序（Kahn）与区间图分配教材章节 —— memory plan 的理论基础
+
+## M5 批处理 + CUDA Graph
 - vLLM 论文剩余部分（scheduler）；Orca 论文（continuous batching 起源，可选）
 - CUDA Graph 官方文档（cudaGraph / Stream Capture）
+
+## M6 INT8 量化（P4）
+- LLM.int8() 论文（Dettmers et al. 2022）—— 理解激活离群值对量化的影响
+- Horowitz, "Computing's Energy Problem" (ISSCC 2014) —— PPA 能耗经典数据表
+- TensorRT / ONNX Runtime 的 INT8 文档 —— 工程实践参照
 
 ## 通用
 - Qwen2.5 技术报告（arXiv 2412.15115）— 了解模型家族全貌

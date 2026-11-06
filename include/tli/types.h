@@ -15,7 +15,7 @@ inline int64_t numel(const std::vector<int64_t>& shape) {
 }
 
 // 显存张量的最小封装：一个 device 指针 + 形状。刻意保持简单，
-// M4 做 batching 时再演进成带 allocator 的版本。
+// M5 做 batching 时再演进成带 allocator 的版本。
 // M1 阶段全部 fp32，所以 data 直接用 float*。
 struct Tensor {
   float* data = nullptr;  // device pointer

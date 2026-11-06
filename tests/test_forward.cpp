@@ -10,6 +10,8 @@
 //      dump 成 <out_dir>/p{i}_L{k}.bin（fp32 raw，行主序 [seq, hidden]），
 //      把 logits dump 成 <out_dir>/p{i}_logits.bin（fp32 raw [vocab]）
 //   3) python scripts/compare_golden.py --golden golden --mine out
+//   4) 通过后 python scripts/export_vectors.py --golden golden --out vectors --fixed
+//      （IC 提案 P6：导出 RTL 风格测试向量，见 docs/ic/P6-golden-model-testvectors.md）
 //
 // dump 帮助函数提示：cudaMemcpy 拷回 host 后，用 std::ofstream 以二进制
 // 模式写入即可；文件名下标规则必须和 golden 完全一致（k 从 0 到 num_layers）。

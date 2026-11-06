@@ -7,9 +7,9 @@
 //   2. prefill 和 decode 阶段分别怎么读写它？
 //      （prefill 一次写入整段 prompt 的 KV；decode 每步只追加 1 个 token）
 //
-//   3. M4 做 batching 时多条序列怎么共存？
-//      如果现在按"每序列独立大数组"设计，M4 会遇到什么问题？
-//      —— 这正是 PagedAttention 要解决的，M5 可选做。
+//   3. M5 做 batching 时多条序列怎么共存？
+//      如果现在按"每序列独立大数组"设计，M5 会遇到什么问题？
+//      —— 这正是 PagedAttention 要解决的，M7 可选做。
 namespace tli {
 class KvCache {
   // TODO(M2)
